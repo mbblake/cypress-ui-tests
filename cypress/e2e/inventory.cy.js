@@ -1,15 +1,15 @@
 import { onInventoryPage } from "../support/page-objects/pages/inventoryPage";
-import { onLoginPage } from "../support/page-objects/pages/loginPage";
+import { loginData } from "../fixtures/users/standardUser";
 
 describe("Inventory Test Suite", () => {
     before(() => {
-        cy.login("standard_user", "secret_sauce");
+        cy.login(loginData.username, loginData.password);
     });
 
     beforeEach(() => {
         cy.restoreCookies();
         cy.visit("?/inventory.html");
-        cy.fixture("products").as("products");
+        cy.fixture("/products/productDetails").as("productDetails");
     });
 
     it("Should display all currently available products", function () {
@@ -18,10 +18,13 @@ describe("Inventory Test Suite", () => {
             .each((productName) => {
                 onInventoryPage
                     .theDescriptionForProduct(productName)
-                    .should("contain", this.products[productName].description);
+                    .should(
+                        "contain",
+                        this.productDetails[productName].description
+                    );
                 onInventoryPage
                     .thePriceForProduct(productName)
-                    .should("contain", this.products[productName].price);
+                    .should("contain", this.productDetails[productName].price);
             });
     });
 

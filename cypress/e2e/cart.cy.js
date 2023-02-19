@@ -1,8 +1,9 @@
 import { onInventoryPage } from "../support/page-objects/pages/inventoryPage";
+import { loginData } from "../fixtures/users/standardUser";
 
 describe("Cart Test Suite", () => {
     before(() => {
-        cy.login("standard_user", "secret_sauce");
+        cy.login(loginData.username, loginData.password);
     });
 
     beforeEach(() => {

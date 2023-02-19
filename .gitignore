@@ -1,3 +1,5 @@
 # Dependency directories
 node_modules/
 cypress/reports/
+cypress/screenshots/
+.env
