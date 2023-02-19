@@ -1,0 +1,22 @@
+{
+  "name": "cypress-e2e-tests",
+  "version": "1.0.0",
+  "description": "Test repo for demonstrating cyre\b\b\b\bddddd\b\b\b\b\be2e testing using Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MattBlakeQA/cypress-e2e-tests.git"
+  },
+  "author": "Matt Blake",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MattBlakeQA/cypress-e2e-tests/issues"
+  },
+  "homepage": "https://github.com/MattBlakeQA/cypress-e2e-tests#readme",
+  "dependencies": {
+    "cypress": "^12.6.0"
+  }
+}
