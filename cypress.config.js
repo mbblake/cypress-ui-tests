@@ -1,5 +1,6 @@
 const { defineConfig } = require("cypress");
 const dotEnvConfig = require("dotenv").config();
+const envConfig = require("./cypress/support/configs/envConfig");
 
 module.exports = defineConfig({
     e2e: {
@@ -26,9 +27,18 @@ module.exports = defineConfig({
             // Combine Cypress' env variables with the ones from the .env file
             const env = { ...config.env, ...dotEnvConfig.parsed };
 
-            // Return a new config with the additional env variables.
+            // If the test environment is not staging, update the base url
+            const testEnv = config.env["TEST_ENV"].toLowerCase();
+            if (testEnv !== "staging") {
+                config.baseUrl = envConfig[testEnv].baseUrl;
+            }
+
+            // Return a new config with the additional .env file variables.
             // Now we can access them using Cypress.env()
             return { ...config, env };
+        },
+        env: {
+            TEST_ENV: "staging",
         },
     },
 });

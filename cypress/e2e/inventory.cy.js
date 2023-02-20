@@ -3,7 +3,9 @@ import { loginData } from "../fixtures/users/standardUser";
 import { tags } from "../support/utilities/tags";
 import { TAG } from "../fixtures/tags/tagConstants";
 
-describe("Inventory Test Suite", () => {
+const testEnv = Cypress.env("TEST_ENV").toLowerCase();
+
+describe(`Inventory Test Suite [${testEnv}]`, () => {
     before(() => {
         cy.login(loginData.username, loginData.password);
     });

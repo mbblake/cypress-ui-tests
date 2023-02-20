@@ -4,7 +4,9 @@ import { loginData as lockedOutUserLoginData } from "../fixtures/users/lockedOut
 import { tags } from "../support/utilities/tags";
 import { TAG } from "../fixtures/tags/tagConstants";
 
-describe("Login Test Suite", () => {
+const testEnv = Cypress.env("TEST_ENV").toLowerCase();
+
+describe(`Login Test Suite [${testEnv}]`, () => {
     beforeEach(() => {
         cy.visit("/");
     });
