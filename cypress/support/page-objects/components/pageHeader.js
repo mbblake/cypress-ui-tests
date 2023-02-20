@@ -11,6 +11,13 @@ export class PageHeader extends BaseInteractable {
         return cy.get("#shopping_cart_container");
     }
 
+    // Return the count as an integer
+    get theNumberOfProductsInCart() {
+        return cy.get(".shopping_cart_badge").then((number) => {
+            cy.wrap(parseInt(number.text()));
+        });
+    }
+
     openBurgerMenu() {
         this.theBurgerMenuButton.click();
 
