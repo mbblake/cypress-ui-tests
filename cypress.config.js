@@ -23,8 +23,11 @@ module.exports = defineConfig({
             // implement node event listeners here
             require("cypress-mochawesome-reporter/plugin")(on);
 
+            // Combine Cypress' env variables with the ones from the .env file
             const env = { ...config.env, ...dotEnvConfig.parsed };
 
+            // Return a new config with the additional env variables.
+            // Now we can access them using Cypress.env()
             return { ...config, env };
         },
     },
