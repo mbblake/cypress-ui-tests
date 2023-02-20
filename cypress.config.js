@@ -28,9 +28,17 @@ module.exports = defineConfig({
             const env = { ...config.env, ...dotEnvConfig.parsed };
 
             // If the test environment is not staging, update the base url
+            // If an invalid environment was specified, throw an error and quit
             const testEnv = config.env["TEST_ENV"].toLowerCase();
             if (testEnv !== "staging") {
-                config.baseUrl = envConfig[testEnv].baseUrl;
+                const currentTestEnvConfig = envConfig[testEnv];
+                if (!currentTestEnvConfig)
+                    throw new Error(
+                        `Environment "${testEnv}" is not a valid option. Valid options are: ${Object.keys(
+                            envConfig
+                        )}`
+                    );
+                config.baseUrl = currentTestEnvConfig.baseUrl;
             }
 
             // Return a new config with the additional .env file variables.
