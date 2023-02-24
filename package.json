@@ -1,7 +1,7 @@
 {
-  "name": "cypress-e2e-tests",
+  "name": "cypress-ui-tests",
   "version": "1.0.0",
-  "description": "Test repo for demonstrating e2e testing using Cypress",
+  "description": "Test repo for demonstrating ui testing using Cypress",
   "main": "index.js",
   "scripts": {
     "cypress:staging": "npx cypress run --browser chrome --spec '**/!(data-generators)/*.js'",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MattBlakeQA/cypress-e2e-tests.git"
+    "url": "git+https://github.com/MattBlakeQA/cypress-ui-tests.git"
   },
   "author": "Matt Blake",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MattBlakeQA/cypress-e2e-tests/issues"
+    "url": "https://github.com/MattBlakeQA/cypress-ui-tests/issues"
   },
-  "homepage": "https://github.com/MattBlakeQA/cypress-e2e-tests#readme",
+  "homepage": "https://github.com/MattBlakeQA/cypress-ui-tests#readme",
   "dependencies": {
     "cypress": "^12.6.0",
     "cypress-mochawesome-reporter": "^3.3.0",
