@@ -1,13 +1,13 @@
-# cypress-e2e-tests
+# cypress-ui-tests
 
-Demonstration of using Cypress to run tests against a basic test web application
+Demonstration of using Cypress to run ui tests against a basic test web application
 
 ## Getting Started
 
 ### Installing
 
 -   Install git
--   Clone the repo: `git clone https://github.com/MattBlakeQA/cypress-e2e-tests.git`
+-   Clone the repo: `git clone https://github.com/MattBlakeQA/cypress-ui-tests.git`
 -   Install Node 18+
 -   Install NPM
 -   Install Chrome
